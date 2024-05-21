@@ -1,6 +1,6 @@
 # Storm Technical Test – A Todo-List Project
 
-This is a todo-list webapp written in C# using [.NET 5.0](https://get.asp.net).
+This is a todo-list webapp written in C# using [.NET 8.0](https://get.asp.net).
 
 Show us what you've got by knocking it into shape!
 
@@ -10,7 +10,7 @@ Please make a fork of this project for your work.
 
 Each commit you make should relate to a single task. A more complex task may have many commits; this is up to you.
 
-The app runs on Windows, macOS, and Linux. It can be built using Visual Studio 2019, Visual Studio Code, or command line. On the command line: 
+The app runs on Windows, macOS, and Linux. It can be built using Visual Studio, Visual Studio Code, Rider, or the command line. On the command line: 
 
 | What | How |
 |-|-|
