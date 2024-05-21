@@ -1,4 +1,4 @@
-# Storm Technical Test – A Todo-List Project
+# Storyteller Technical Test – A Todo-List Project
 
 This is a todo-list webapp written in C# using [.NET 8.0](https://get.asp.net).
 
