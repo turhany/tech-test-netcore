@@ -86,3 +86,6 @@ Doc: https://docs.gravatar.com/api/profiles/json/
 
 ###### Best Practice:
 For gravatar best practice is get image and profile data with async way and store them in database and cache and update gravatar data with a scheduled job.
+
+#### Task 9:
+I dont develop this tasks because my main expertise is backend. To develop this tasks i need the read, check, make some sample about mvc ui usage. Search on stackoverflow, watch videos to remember frontend and it will taken more time. I can'not complete this task in 5 hours.
