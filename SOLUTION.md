@@ -59,3 +59,11 @@ If we don't have plan to add paging for this page and my assumption this page ca
 
 ###### Best Practice:
 Add paging for this page and handle hide done item logic at server side. Dont expose logic to ui client.
+
+#### Task 6:
+
+###### Solution:
+Update todo list query to get user assined todo lists.("ApplicationDbContextConvenience > RelevantTodoLists")
+
+###### Suggestion:
+* Need to add check for user only can update own items in other owners list. 
