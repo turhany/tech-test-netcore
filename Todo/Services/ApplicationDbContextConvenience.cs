@@ -17,7 +17,7 @@ namespace Todo.Services
         public static TodoList SingleTodoList(this ApplicationDbContext dbContext, int todoListId)
         {
             return dbContext.TodoLists.Include(tl => tl.Owner)
-                .Include(tl => tl.Items)
+                .Include(tl => tl.Items.OrderBy(ti => ti.Importance))
                 .ThenInclude(ti => ti.ResponsibleParty)
                 .Single(tl => tl.TodoListId == todoListId);
         }
