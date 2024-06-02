@@ -1,5 +1,6 @@
 ﻿@using Todo.Controllers
 @using Todo.Data.Entities
+@using Todo.Models.TodoItems
 @using Todo.Services
 @model Todo.Models.TodoLists.TodoListDetailViewmodel
 
@@ -17,6 +18,15 @@
             <a asp-action="Create" asp-controller="TodoItem" asp-route-todoListId="@Model.TodoListId">
                 <strong>Add New Item</strong>
             </a>
+        </li>
+        <li class="list-group-item"> 
+            <form method="get" asp-action="Detail" asp-controller="TodoList">
+                @Html.HiddenFor(x => x.TodoListId)
+                @Html.RadioButtonFor(x => x.SortOperation, TodoItemSortByOperation.Importance, new { onchange = "this.form.submit()" }) @TodoItemSortByOperation.Importance.ToString()
+                <br />
+                @Html.RadioButtonFor(x => x.SortOperation, TodoItemSortByOperation.Rank, new { onchange = "this.form.submit()" }) @TodoItemSortByOperation.Rank.ToString()
+                <br />
+            </form>
         </li>
         <li class="list-group-item">
             <input type="checkbox" id="hide-done-items" /> Hide Done Items

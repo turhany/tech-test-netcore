@@ -67,3 +67,12 @@ Update todo list query to get user assined todo lists.("ApplicationDbContextConv
 
 ###### Suggestion:
 * Need to add check for user only can update own items in other owners list. 
+
+#### Task 7:
+
+###### Solution:
+Server side order flow refactored and developed.
+
+Migration Codes For Rank:
+* add-migration 20240602174500_AddRankFieldToTodoItem -context Data.ApplicationDbContext
+* update-database

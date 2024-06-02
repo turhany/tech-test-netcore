@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Todo.Data;
 using Todo.Data.Entities;
+using Todo.Models.TodoItems;
 
 namespace Todo.Services
 {
@@ -14,12 +15,23 @@ namespace Todo.Services
                 .Where(tl => tl.Owner.Id == userId || tl.Items.Any(ti => ti.ResponsibleParty.Id == userId));
         }
 
-        public static TodoList SingleTodoList(this ApplicationDbContext dbContext, int todoListId)
+        public static TodoList SingleTodoList(this ApplicationDbContext dbContext, int todoListId, TodoItemSortByOperation todoItemSortByOperation = TodoItemSortByOperation.Importance)
         {
-            return dbContext.TodoLists.Include(tl => tl.Owner)
+            var todoList = dbContext.TodoLists.Include(tl => tl.Owner)
                 .Include(tl => tl.Items.OrderBy(ti => ti.Importance))
                 .ThenInclude(ti => ti.ResponsibleParty)
                 .Single(tl => tl.TodoListId == todoListId);
+
+            if (todoItemSortByOperation == TodoItemSortByOperation.Importance)
+            {
+                todoList.Items = todoList.Items.OrderBy(ti => ti.Importance).ToList();
+            }
+            else if (todoItemSortByOperation == TodoItemSortByOperation.Rank)
+            {
+                todoList.Items = todoList.Items.OrderByDescending(ti => ti.Rank).ToList();
+            }
+
+            return todoList;
         }
 
         public static TodoItem SingleTodoItem(this ApplicationDbContext dbContext, int todoItemId)
