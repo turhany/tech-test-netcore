@@ -51,3 +51,11 @@ Changed Models
 Doc: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.displaynameattribute?view=net-8.0
 Doc: https://en.wikipedia.org/wiki/SOLID
 Doc: https://en.wikipedia.org/wiki/Separation_of_concerns
+
+#### Task 5:
+
+###### Solution:
+If we don't have plan to add paging for this page and my assumption this page can not will show million items because of that we can use javascipt for hide done items. This option help us to reduce server requests(server round trips).
+
+###### Best Practice:
+Add paging for this page and handle hide done item logic at server side. Dont expose logic to ui client.
