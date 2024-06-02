@@ -89,3 +89,9 @@ For gravatar best practice is get image and profile data with async way and stor
 
 #### Task 9:
 I dont develop this tasks because my main expertise is backend. To develop this tasks i need the read, check, make some sample about mvc ui usage. Search on stackoverflow, watch videos to remember frontend and it will taken more time. I can'not complete this task in 5 hours.
+
+#### Task 10:
+I dont have enuoh time to develop this task. My 5 hour limit completed.
+
+#### About Unit Tests:
+I started the write unit tests but i can not complete that part of tasks, i try to give reponse quickly about case study. If it is must please i need more time for work more on this case. Thank you.
