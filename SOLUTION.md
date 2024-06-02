@@ -32,3 +32,8 @@ public enum Importance
     Low = 30,
 }
 ```
+
+#### Task 3:
+
+###### Solution:
+Change fixed importance  mappign in "TodoItemEditFields" mappig code.
