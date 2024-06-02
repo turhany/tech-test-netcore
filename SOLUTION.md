@@ -74,5 +74,15 @@ Update todo list query to get user assined todo lists.("ApplicationDbContextConv
 Server side order flow refactored and developed.
 
 Migration Codes For Rank:
-* add-migration 20240602174500_AddRankFieldToTodoItem -context Data.ApplicationDbContext
+* add-migration 20240602174500_AddRankFieldToTodoItem
 * update-database
+
+#### Task 8:
+
+###### Solution:
+Added get gravatar preferred user name method. This save data to inmemory cache. My previous task i think you can see my ef core usage because of that i dont add database save code.
+
+Doc: https://docs.gravatar.com/api/profiles/json/
+
+###### Best Practice:
+For gravatar best practice is get image and profile data with async way and store them in database and cache and update gravatar data with a scheduled job.

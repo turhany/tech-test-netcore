@@ -1,8 +1,10 @@
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Caching.Memory
 @using Todo.Services
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject IMemoryCache MemoryCache
 
 @if (SignInManager.IsSignedIn(User))
 {
@@ -19,6 +21,9 @@
                     }
 
                     <img src="https://www.gravatar.com/avatar/@gravatarhash?s=30" />
+                    <label>                        
+                        @(new Gravatar(this.MemoryCache).GetPreferredUsername(emailAddress))
+                    </label>
                     @UserManager.GetUserName(User)
                 </a>
             </li>

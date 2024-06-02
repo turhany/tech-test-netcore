@@ -1,8 +1,10 @@
-﻿@using Todo.Controllers
+﻿@using Microsoft.Extensions.Caching.Memory
+@using Todo.Controllers
 @using Todo.Data.Entities
 @using Todo.Models.TodoItems
 @using Todo.Services
 @model Todo.Models.TodoLists.TodoListDetailViewmodel
+@inject IMemoryCache MemoryCache
 
 @{
     ViewData["Title"] = $"List: {Model.Title}";
@@ -69,6 +71,10 @@
                     <div class="col-md-4 text-right">
                         <small>
                             @item.ResponsibleParty.UserName
+
+                            <label>
+                                @(new Gravatar(this.MemoryCache).GetPreferredUsername(item.ResponsibleParty.Email))
+                            </label>
 
                             <img src="https://www.gravatar.com/avatar/@Gravatar.GetHash(item.ResponsibleParty.Email)?s=30" />
 
