@@ -37,3 +37,17 @@ public enum Importance
 
 ###### Solution:
 Change fixed importance  mappign in "TodoItemEditFields" mappig code.
+
+#### Task 4:
+
+###### Solution:
+For this situation we use MVC because of that i decide to use "DisplayNameArrtibute" this is not the best practice.
+The usage attribute for ui naming means break SOLID  > S(single responsibility). Best practice is create a separate way to handle ui field names and store your names there(Seperation of concerns). For example create a resx(c# resource file) and put you naming there.
+
+Changed Models
+* TodoItemCreateFields
+* TodoItemEditFields
+
+Doc: https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.displaynameattribute?view=net-8.0
+Doc: https://en.wikipedia.org/wiki/SOLID
+Doc: https://en.wikipedia.org/wiki/Separation_of_concerns
